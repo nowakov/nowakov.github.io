@@ -5,12 +5,16 @@ html {
   height: 100%;
 }
 body {
-  background: #ECC561;
+  background: #2D2D2D;
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1em;
   height: 100%;
-  color: rgba(0,0,0,0.5);
+  color: #E21249;
   text-align: center;
+}
+
+h2 {
+  margin-top: -20px;
 }
 
 .welcome {
