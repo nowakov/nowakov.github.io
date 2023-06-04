@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/{p5.js_version}/p5.js"></script>
+</head>
+<body>
+  <script>
+    let acl = 0.03;
+let spd = 0;
+let elev = 10;
+let fuel = 150;
+
+function setup() {
+  createCanvas(400, 800);
+}
+
+function draw() {
+  background(51);
+  stroke(GRAY);
+  noFill();
+  line(50, 700, 350, 700);
+  ellipse(200, elev, 80, 80);
+
+  if (elev < 660) {
+    if (mouseIsPressed && fuel > 0) {
+      spd -= acl;
+      fuel--;
+    } else {
+      spd += acl;
+    }
+    elev = elev + 1 * spd;
+  } else {
+    if (spd < 1) {
+      fill("green");
+      ellipse(200, elev, 80, 80);
+    } else {
+      fill("red");
+      ellipse(200, elev, 80, 80);
+    }
+  }
+  
+  stroke(0);
+  strokeWeight(4);
+  noFill();
+  rect(10, 10, 200, 20);
+  
+  noStroke();
+  fill(255, 0, 0);
+  rect(10, 10, map(fuel, 0, 150, 0, 200), 20);
+}
+
+  </script>
+</body>
+</html>
